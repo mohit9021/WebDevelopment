@@ -60,6 +60,7 @@ async function main() {
 
     let songUL = document.querySelector(".songlist").getElementsByTagName("ul")[0];
 
+    
     for (const song of songs) {
         let nameOnly = song.replace("http://127.0.0.1:3000/songs/", "").replace(".mp3", "").replaceAll("-", " ").trim();
         songUL.innerHTML += `<li>
