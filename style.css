@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+
+:root {
+    --a : 0;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -124,8 +129,11 @@ body {
     width: 200px;
     padding-top: 0px;
     position: relative;
+    transition: all 0.5s;
 
 }
+
+
 .spotifyplaylists h1{
     font-size: 20px;
 }
@@ -162,9 +170,17 @@ body {
     position: absolute;
     top: 179px;
     right: 17px;
-    opacity: 1;
-    transition: all 1s ease-out;
+    opacity: var(--a);
+    transition: all 0.5s ease-out;
 }
+
+.card:hover{
+    background-color: rgba(36, 34, 34, 0.215);
+    cursor: pointer;
+    --a: 1;
+}
+
+
 
 .buttons>* {
     margin: 0 12px;
@@ -306,8 +322,22 @@ align-items: center;
     cursor: pointer;
 }
 
-.songinfo, .songtime{
+.songinfo, 
+.songtime{
     padding: 0 12px ;
+    width: 120px;
+
+}
+
+.volume{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+}
+
+.volume img{
+    height: 30px;
 }
 
 
@@ -329,6 +359,14 @@ align-items: center;
     gap: 14px;
 
 }
+
+.timevol{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-right: 46px;
+}
+
 
 @media (max-width: 1240px) {
     .left {
@@ -388,6 +426,17 @@ align-items: center;
     gap: 23px;
     align-items: center;
     height: 101px;
+  }
+  .songinfo{
+    padding-left: 50px;
+  }
+  .songtime{
+    padding-left: 105px;
+  }
+
+  .play{
+    top: 310px;
+    /* opacity: 1; */
   }
 }
 
